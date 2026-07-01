@@ -1,9 +1,16 @@
-#include "myVector.h"
-#include <string>
+//#include "myVector.h"
+//#include <string>
+//STL = namespace std
+#include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
 
 int main() {
-
-    Vector<int> v1; //size = 0
+    //TASK 1
+   /*
+    * Vector<int> v1; //size = 0
     Vector<double> v2(2, 0.5);  //size=2, [0.5, 0.5]
     Vector<string> v3(3, "step"); //size =3, ["step", "step", "step"]
 
@@ -38,6 +45,42 @@ int main() {
 
     v3.print();
     cout << "Max: " << v3.find_max() << " Min: " << v3.find_min() << "\n\n";
+*/
+
+
+    //TASK2
+    vector<int> v1;
+    for (int i = 0; i < 10; ++i) {
+        v1.push_back( rand()%100 - 50);
+    }
+
+    //1 спосіб = обробки масиву через індекс
+    for(int i =0; i < v1.size(); i++) {
+        cout << v1[i] << " ";
+    }cout << endl;
+
+    //2 спосіб = обробки масиву через ітератор
+    vector<int>::iterator it;
+    for (it = v1.begin(); it < v1.end(); it++) {
+        cout << *it << " ";
+    }cout << endl;
+
+    //3 спосіб = обробки масиву як контейнеру
+    for (int a:v1) { //v1 = [1, 2, 3]
+        cout << a << " ";
+    }cout << endl;
+
+
+    for (auto a:v1) { //v1 = [1, 2, 3]
+        cout << a << " ";
+        a = 2;
+    }cout << endl;//v1 = [1, 2, 3]
+
+
+    for (auto& a:v1) { //v1 = [1, 2, 3]
+        cout << a << " ";
+        a = 2;
+    }cout << endl;//v1 = [2, 2, 2]
 
     return 0;
 }
