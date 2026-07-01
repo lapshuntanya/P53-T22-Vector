@@ -18,7 +18,7 @@ int main() {
 
     v3.push_back("it");
     v3.push_back("hello");
-    v3.push_back("C++");
+    v3.push_back("c++");
 
 
     v1.print();
@@ -26,6 +26,18 @@ int main() {
     v3.print();
     cout << "================================\n";
 
+    v1[0] = -56;
+    v2[1]= -56.78;
+    v3[2] = "apple";
+
+    v1.print();
+    cout << "Max: " << v1.find_max() << " Min: " << v1.find_min() << "\n\n";
+
+    v2.print();
+    cout << "Max: " << v2.find_max() << " Min: " << v2.find_min() << "\n\n";
+
+    v3.print();
+    cout << "Max: " << v3.find_max() << " Min: " << v3.find_min() << "\n\n";
 
     return 0;
 }
