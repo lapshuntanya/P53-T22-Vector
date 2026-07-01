@@ -65,10 +65,26 @@ public:
 
         arr = tmp;
     }
-    Type& operator[](int number);
+    Type& operator[](int number) {
+        return arr[number];
+    }
 
-    Type find_max()const; // пошук елемента з максимальним значенням
-    Type find_min()const; // пошук елемента з мінімальним значенням
+    Type find_max()const // пошук елемента з максимальним значенням
+    {
+        Type max = arr[0];
+        for (int i = 1; i < size; ++i) {
+            if (arr[i] > max) max = arr[i];
+        }
+        return max;
+    }
+    Type find_min()const // пошук елемента з мінімальним значенням
+    {
+        Type min = arr[0];
+        for (int i = 1; i < size; ++i) {
+            if (arr[i] < min) min = arr[i];
+        }
+        return min;
+    }
 
 };
 #endif //P53_T22_VECTOR_MYVECTOR_H
